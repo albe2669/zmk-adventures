@@ -58,4 +58,36 @@
                     	       &trans   &trans   &trans      &trans    &mo CTL   &trans
                         >;
                 };
+
+								control_layer {
+// -----------------------------------------------------------------------------------------
+// | PLAY  | MUTE |      |     |     |     |   |     |     |     |     |     |      |
+// | NSONG | VOLU | BRIU |     |     |     |   |     |     |     |     |     | PTSC |
+// | PSONG | VOLD | BRID |     |     |     |   |     |     |     |     |     |      |
+//                |      |     |     |     |   |     |     |
+                        bindings = <
+   &kp C_PP   &kp C_MUTE   &trans       &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+   &kp C_NEXT &kp C_VOL_UP &kp C_BRI_UP &trans &trans &trans   &trans &trans &trans &trans &trans &kp PSCRN
+   &kp C_PREV &kp C_VOL_DN &kp C_BRI_DN &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+                    	                  &trans &trans &trans   &trans &trans &trans
+                        >;
+                };
+				};
 };
+
+
+// Layer you can copy in. Just remove the leadin slash
+
+//								control_layer {
+//// -----------------------------------------------------------------------------------------
+//// |       |      |      |     |     |     |   |     |     |     |     |     |      |
+//// |       |      |      |     |     |     |   |     |     |     |     |     |      |
+//// |       |      |      |     |     |     |   |     |     |     |     |     |      |
+////                |      |     |     |     |   |     |     |
+//                        bindings = <
+//   &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+//   &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+//   &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+//                    	  &trans &trans &trans   &trans &trans &trans
+//                        >;
+//                };
