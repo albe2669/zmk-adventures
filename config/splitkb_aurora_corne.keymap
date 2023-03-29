@@ -47,12 +47,12 @@
 
                 symbol_layer {
 // -----------------------------------------------------------------------------------------
-// |     |  ~  |  (  |  )  |  @  |  #  |   |     |  /  |  \  |     |     |      |
+// |     |  ~  |  (  |  )  |  @  |  #  |   |     |  \  |  \  |     |     |      |
 // |     |  $  |  {  |  }  |  &  |  %  |   |  +  |  -  |  *  |  :  |  \` | "|"  |
 // |     |  !  |  [  |  ]  |  <  |  >  |   |  =  |  _  |  ^  |  ;  |  ?  |      |
 //                   |     |     |     |   |     | CTLS|     |
                         bindings = <
-   &trans &kp TILDE &kp LPAR &kp RPAR &kp AT   &kp HASH    &trans    &kp BSLH  &kp FSLH        &trans    &trans    &trans
+   &trans &kp TILDE &kp LPAR &kp RPAR &kp AT   &kp HASH    &trans    &kp FSLH  &kp BSLH        &trans    &trans    &trans
    &trans &kp DLLR  &kp LBRC &kp RBRC &kp AMPS &kp PRCNT   &kp PLUS  &kp MINUS &kp KP_MULTIPLY &kp COLON &kp GRAVE &kp PIPE
    &trans &kp EXCL  &kp LBKT &kp RBKT &kp LT   &kp GT      &kp EQUAL &kp UNDER &kp CARET       &kp SEMI  &kp QMARK &trans
                     	       &trans   &trans   &trans      &trans    &mo CTL   &trans
