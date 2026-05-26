@@ -1,0 +1,6 @@
+draw_config:
+  # Aurora Corne rev1 — split 3x6+3
+  key_h: 54
+  key_w: 60
+  split_gap: 30
+  combo_diagrams: false
