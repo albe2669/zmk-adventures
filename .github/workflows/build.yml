@@ -1,5 +1,34 @@
-on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  workflow_dispatch:
 
 jobs:
+  # On PRs: lightweight config validation only (no full ZMK build)
+  validate:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate YAML config files
+        run: |
+          python3 - <<'EOF'
+          import yaml, sys
+          files = ['config/west.yml', 'build.yaml']
+          ok = True
+          for f in files:
+              try:
+                  yaml.safe_load(open(f))
+                  print(f"OK: {f}")
+              except Exception as e:
+                  print(f"FAIL: {f}: {e}", file=sys.stderr)
+                  ok = False
+          sys.exit(0 if ok else 1)
+          EOF
+
+  # On pushes to master (and manual dispatch): full firmware build
   build:
+    if: github.event_name != 'pull_request'
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3.0
