@@ -1,8 +1,6 @@
 name: Draw keymap
 
 on:
-  pull_request:
-    branches: [master]
   push:
     branches:
       - master
@@ -28,11 +26,11 @@ jobs:
             --ortho-layout '{split: true, rows: 3, columns: 6, thumbs: 3}' \
             > images/keymap.svg
 
-#      - name: Commit updated images
-#        run: |
-#          git config user.name "github-actions[bot]"
-#          git config user.email "github-actions[bot]@users.noreply.github.com"
-#          git add images/keymap.svg
-#          git diff --staged --quiet || \
-#            git commit -m "chore: regenerate keymap images [skip ci]" && \
-#            git push origin HEAD:master
+      - name: Commit updated images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add images/keymap.svg
+          git diff --staged --quiet || \
+            git commit -m "chore: regenerate keymap images [skip ci]" && \
+            git push origin HEAD:master
